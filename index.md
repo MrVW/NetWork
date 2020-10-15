@@ -1,37 +1,30 @@
-## Welcome to GitHub Pages
+## NetWork Topics
 
-You can use the [editor on GitHub](https://github.com/MrVW/NetWork/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+``` NonSense
+如何配置网络是工作重点。
+我期望成功一个嵌入式工程师，或者起码是一个软件工程师，面对的代码，而不是我不会的皮球，丢不出去的皮球。
+我也希望能够用自己知识，帮助客户解决问题，所以选择FAE这个部门。
 
-### Markdown
+现实和理想是
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+很大一部分工作，面对的是Linux网络配置，甚至超过协助客户移植Quectel驱动和工具使用。
 
-```markdown
-Syntax highlighted code block
+非不能也，乃不为也。
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+既然还在这里工作，就把工作尽可能做好吧。
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+随着移动蜂窝网络的发展，我们对数据连接的需求也在增加。电话、短信(CS业务)等任务已经不那么重要，客户更关心的，是网络数据连接需求。Quectel模组，从2G到5G，上下行速率也随着核心网的升级不断发展。其中使用Quectel模组，尤其是标准模组，是希望将Quectel模组作为一个网络接入方式，在客户的AP上，Quectel模组承担的是移动网络接入的功能。客户AP的外部网络连接走的就是Quectel模组。客户的AP上也有各种网络接口设备，如以太网卡、WIFI、虚拟网卡、网桥等。Quectel模组生成的网卡不是唯一网卡节点
+
+
+
+### About NetWorkManager
+
+
 
 ### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MrVW/NetWork/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
