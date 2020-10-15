@@ -72,6 +72,36 @@
 
 以下主要针对以上两类系统进行学习。
 
+##基础命令
 
+----
+
+###路由
+
+[gateway](gateway)
+
+[route](route)
+
+
+###其他
+
+[ss](ss)
+
+
+##NetWorkManager
+
+### nmcli
+
+[nmcli](nmcli)
+
+### nmtui
+
+[nmtui](nmtui)
+
+### systemd-network
+
+[systemd-network](systemd-network)
+
+[systemd-network](systemd-network2)
 
 
