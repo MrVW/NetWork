@@ -1,4 +1,4 @@
-<img width="480px"  src="rc/M.jpg">
+<img width="180px"  src="rc/M.jpg">
 
 # Linux 基本网络配置 
 
