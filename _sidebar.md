@@ -9,8 +9,10 @@
   - [ip](ip)
   - [ss](ss)
   - [路由和网关](gateway)
-  - [netstat ](netstat)
-
+  - [netstat](netstat)
+  - [tracert](tracert)
+  
+  
 - **NetWorkManager**
 
   - [nmcli](nmcli)
@@ -37,10 +39,19 @@
   -	[wireshark](wireshark)
   
 
+- **网络编程**
+
+  - [tcp通信](netprogramming/TCP)
+  - [udp通信](netprogramming/UDP)
+  - [Socket](netprogramming/Socket)
+
 - **FAQs**
 
   - [FAQ](faq)
   -	[Ref](ref)
   
-  
+- **MISC**
+
+  - [ss](misc/ss)
+  -	[netcat](misc/netcat)
   

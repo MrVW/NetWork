@@ -2,6 +2,7 @@ NETWORKD-DISPATCHER(8)                                                          
 
 NAME
        networkd-dispatcher - Dispatcher service for systemd-networkd connection status changes
+用于系统-网络连接状态更改的调度程序服务
 
 SYNOPSIS
        networkd-dispatcher [-h] [-S SCRIPT_DIR] [-T] [-v] [-q]
@@ -9,6 +10,8 @@ SYNOPSIS
 DESCRIPTION
        Dispatcher daemon for systemd-networkd connection status changes. This daemon is similar to NetworkManager-dispatcher, but is
        much more limited in the types of events it supports due to the limited nature of systemd-networkd(8).
+	   
+	   用于系统-网络连接状态更改的调度程序守护进程。这个守护进程类似于NetworkManager-dispatcher。
 
        Desired actions (scripts) are placed into directories that reflect systemd-networkd operational states under SCRIPT_DIR and
        are executed when the daemon receives the relevant event from systemd-networkd.
