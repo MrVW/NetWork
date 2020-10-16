@@ -66,7 +66,8 @@ Linux操作系统的网络配置和管理的工具分为四类：
 ![NetWorkStack](rc/netcmds.webp)
 
 
-![netools-iproute2](rc/netools-iproute2.webp)
+![netools-iproute2](rc/netools-iproute2.jpg)
+
 
 网络配置工具有渊源深厚的net-tools，目前得到广泛支持的iproute2的ip模块，ubuntu积极推进的netplan，以及NetworkManager内置的nmcli、nmtui。网络配置工具主要是为用户提供操作接口，用户操作通过网络配置工具传递给systemd-networkd和NetworkManager，再由其通知Linux Kernel执行。通俗的讲，如果能够熟练的通过vi工具直接修改网络配置文件，则可以不安装和使用任何网络配置工具。
 

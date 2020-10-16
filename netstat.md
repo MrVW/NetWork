@@ -1,3 +1,5 @@
+netstat
+
 usage: netstat [-vWeenNcCF] [<Af>] -r         netstat {-V|--version|-h|--help}
        netstat [-vWnNcaeol] [<Socket> ...]
        netstat { [-vWeenNac] -i | [-cnNe] -M | -s [-6tuw] }
@@ -29,4 +31,6 @@ usage: netstat [-vWeenNcCF] [<Af>] -r         netstat {-V|--version|-h|--help}
   <Socket>={-t|--tcp} {-u|--udp} {-U|--udplite} {-S|--sctp} {-w|--raw}
            {-x|--unix} --ax25 --ipx --netrom
   <AF>=Use '-6|-4' or '-A <af>' or '--<af>'；默认： inet
-  列出所有支持的协议：
+
+
+
