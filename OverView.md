@@ -2,18 +2,18 @@ Linux分别为用户空间和内核空间两个部分。用户空间包括用户
 
 ![KernelFrameWork](rc/KernelSpace.webp)
 
+![NetWorkStack](rc/NetWorkStack.webp)
 
-Network Device Drivers：网络设备驱动，用于控制所有的网络接口卡及网络控制器。
+	Network Device Drivers：网络设备驱动，用于控制所有的网络接口卡及网络控制器。
 
-Device Independent Interface：统一设备模型，定义描述网络硬件设备的统一方式，用一致的形式对驱动程序提供接口，实现所有的网络设备驱动都遵照统一定义，降低网络接口卡驱动程序的开发难度。
+	Device Independent Interface：统一设备模型。
+	定义描述网络硬件设备的统一方式，用一致的形式对驱动程序提供接口，实现所有的网络设备驱动都遵照统一定义，降低网络接口卡驱动程序的开发难度。
 
-Network Protocols：实现网络传输协议，例如IP, TCP, UDP等。
+	Network Protocols：实现网络传输协议，例如IP, TCP, UDP等。
 
-Protocol Independent Interface：屏蔽下层的硬件设备和网络协议，实现用socket的标准接口支持网络通信。
+	Protocol Independent Interface：屏蔽下层的硬件设备和网络协议，实现用socket的标准接口支持网络通信。
 
-System Call interface：系统调用接口，向用户空间提供访问网络设备的统一接口，各种网络管理工具通过调用该接口实现具体的功能。
-
-
+	System Call interface：系统调用接口，向用户空间提供访问网络设备的统一接口，各种网络管理工具通过调用该接口实现具体的功能。
 
 
 
@@ -57,10 +57,16 @@ system-networkd和NetworkManager是网络管理工具，主要通过对Linux Ker
 ## Linux操作系统的网络管理工具
 
 Linux操作系统的网络配置和管理的工具分为四类：
-	基于systemd-networkd或者NetworkManager的网络配置工具，
-	网络管理工具，
+
+	网络配置工具（基于systemd-networkd或者NetworkManager的）
+	网络管理工具
 	网络测试工具
 	网络监控工具
+
+![NetWorkStack](rc/netcmds.webp)
+
+
+![netools-iproute2](rc/netools-iproute2.webp)
 
 网络配置工具有渊源深厚的net-tools，目前得到广泛支持的iproute2的ip模块，ubuntu积极推进的netplan，以及NetworkManager内置的nmcli、nmtui。网络配置工具主要是为用户提供操作接口，用户操作通过网络配置工具传递给systemd-networkd和NetworkManager，再由其通知Linux Kernel执行。通俗的讲，如果能够熟练的通过vi工具直接修改网络配置文件，则可以不安装和使用任何网络配置工具。
 
