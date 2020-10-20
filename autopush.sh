@@ -3,7 +3,7 @@ commit_msg=`date`
 
 git add .
  
-git status
+# git status
  
 #写个sleep 1s 是为了解决并发导致卡壳
  
