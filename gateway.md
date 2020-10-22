@@ -18,6 +18,8 @@ Get the current GateWay
 海外客户iproute2用比net-tools多。
 
 ip route 命令
+``` ip route
+
 Usage: ip route { list | flush } SELECTOR
        ip route save SELECTOR
        ip route restore
@@ -65,5 +67,6 @@ SEGMODE := [ encap | inline ]
 ROUTE_GET_FLAGS := [ fibmatch ]
 
 
+```
 
 
