@@ -7,6 +7,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
   <style>
 	*{margin:0;padding:0;list-style:none;border:none;}
 	#zzsc{width:920px;margin:40px auto;}
@@ -25,12 +26,22 @@
   <script>
     window.$docsify = {
 	  loadSidebar: true,
+	    alias: {
+		   '/.*/_sidebar.md': '_sidebar.md'
+	    },
 	  coverpage: true,
+	 subMaxLevel: 4,
 	  notFoundPage: true,
-      name: 'MrVW',
-      repo: 'MrVW/NetWork'
+      	name: 'MrVW',
+      	repo: 'MrVW/NetWork',
+	toc: {
+		  scope: '.markdown-section',
+		  headings: 'h1, h2, h3, h4, h5, h6',
+		  title: 'Table of Contents',
+	}
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
 </body>
 </html>
