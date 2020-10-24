@@ -45,10 +45,11 @@
   - [udp通信](netprogramming/UDP)
   - [Socket](netprogramming/Socket)
 
-- **FAQs**
 
-  - [FAQ](faq)
-  - [Ref](ref)
+- **FAQ**
+
+  * [faq](FAQ/faq)
+  * [Ref](FAQ/ref)
   
 - **MISC**
 
