@@ -12,3 +12,14 @@
 
 
 [利用tcpdump解决无法收到组播的问题](https://blog.csdn.net/sfdazsdf/article/details/45844313)
+
+
+[device eth0 entered promiscuous mode](https://dinone.kf5.com/hc/kb/article/1162677/)
+
+[MSI驱动导致的宕机问题](http://blog.sina.com.cn/s/blog_567002510101cyej.html)
+
+[ping 返回 no buffer space available 解决方法](https://blog.csdn.net/weixin_34348805/article/details/90587909)
+
+
+
+
