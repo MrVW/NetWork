@@ -18,7 +18,7 @@ rule：路由策略数据库中的规则
 
 OPTIONS={ -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] | -h[uman-readable] | -iec | -f[amily] { inet | inet6 | ipx | dnet | link } | -o[neline] | -t[imestamp] | -b[atch] [filename] | -rc[vbuf] [size] }
 
-常用选项的取值含义如下：
+``` 常用选项的取值含义如下：
 
 -V：显示命令的版本信息；
 -s：输出更详细的信息；
@@ -81,3 +81,5 @@ ip route delete 192.168.1.0/24 dev eth0 # 删除路由
 
 获取主机所有网络接口：
 ip link | grep -E '^[0-9]' | awk -F: '{print $2}'
+
+```
