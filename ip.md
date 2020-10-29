@@ -10,11 +10,11 @@ OBJECT={ link | addr | addrlabel | route | rule | neigh | ntable | tunnel | madd
 
 常用对象的取值含义如下：
 
-link：网络设备
-address：设备上的协议（IP或IPv6）地址
-addrlabel：协议地址选择的标签配置
-route：路由表条目
-rule：路由策略数据库中的规则
+	link：网络设备
+	address：设备上的协议（IP或IPv6）地址
+	addrlabel：协议地址选择的标签配置
+	route：路由表条目
+	rule：路由策略数据库中的规则
 
 OPTIONS={ -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] | -h[uman-readable] | -iec | -f[amily] { inet | inet6 | ipx | dnet | link } | -o[neline] | -t[imestamp] | -b[atch] [filename] | -rc[vbuf] [size] }
 
