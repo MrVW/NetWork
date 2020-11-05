@@ -15,4 +15,10 @@ SSH 远程连另外一台Windows电脑的里的Vitrualbox/WMware虚拟机里的U
 
 前者需要修改系统里ssh的默认配置文件ssh_config，后者需要开启端口映射功能，看情况在Windows或者Ubuntu系统里配置。远程连接一台Window机器，还需要在Windows系统里配置入口和出可规则。
 
+
+
+虚拟机里的网卡，如果是NAT，可以用端口映射访问，否则远程连过去，目标Ip就是Host的IP， 如果采用桥接网卡，目标IP是桥接网卡的IP.
+
+
+
 实验楼提供了一种SSH远程直连，会员才能享受。
