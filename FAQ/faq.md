@@ -25,3 +25,23 @@ metric 度量值两种方法
 改默认路由方法
 
     route change 默认不能修改自动生成的路由，要修改自动生成路由，就要先加一条路由, 覆盖默认路由，然后修改新增的路由即可
+
+## 修改本地 DNS 缓存指向局域网里的IP 
+
+/etc/hosts 指向一个局域网IP 如10.66.125.215
+
+/etc/hosts add:
+
+10.66.125.215 biao.com 
+
+再另外一台电脑上，启动一个httpserver，python -m simpleHTTPServer 
+
+修改host缓存的机器，可以直接通过浏览器打开biao.com 访问10.66.125.215
+
+## 
+
+
+
+
+
+:)
