@@ -1,5 +1,13 @@
 
 
+## ifconfig
+
+
+
+
+## IP 
+
+
 ![](rc/netools-iproute2.jpg)
 
 IP命令比ifconfig 强大多了

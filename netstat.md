@@ -33,4 +33,17 @@ usage: netstat [-vWeenNcCF] [<Af>] -r         netstat {-V|--version|-h|--help}
   <AF>=Use '-6|-4' or '-A <af>' or '--<af>'；默认： inet
 
 
+## netstat -i
+
+v@v:~$ netstat -i
+Kernel Interface table
+Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+eth0       1500 0      7870      0      0 0          3749      0      0      0 BMRU
+lo        65536 0       443      0      0 0           443      0      0      0 LRU
+
+TX-ERR 和 RX-ERR 数据大，表示网线有问题
+TX-DROP 和 RX-DROP 过大，表示网络负载重，主机来不及处理
+TX-OVR 和 RX-OVR 是由于速率不匹配
+
+
 
