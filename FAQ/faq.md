@@ -38,7 +38,12 @@ metric 度量值两种方法
 
 修改host缓存的机器，可以直接通过浏览器打开biao.com 访问10.66.125.215
 
-## 
+
+## unable to resolve host 
+
+/etc/hosts add:
+
+127.0.0.1 localhost [hostname]
 
 
 
