@@ -14,6 +14,6 @@ systemctl stop avahi-daemon
 
 
 
-
+[https://blog.csdn.net/tjjingpan/article/details/81237308](https://blog.csdn.net/tjjingpan/article/details/81237308)
 
 :)
