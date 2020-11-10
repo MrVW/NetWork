@@ -1,3 +1,9 @@
+Man
+====
+
+nmcli
+----
+
 NMCLI(1)                                               General Commands Manual                                              NMCLI(1)
 
 NAME
@@ -1322,4 +1328,340 @@ SEE ALSO
        nmcli-examples(7), nm-online(1), NetworkManager(8), NetworkManager.conf(5), nm-settings(5), nm-applet(1), nm-connection-
        editor(1), terminal-colors.d(5).
 
-NetworkManager 1.22.10                                                                                                      NMCLI(1)
+nmtui
+----
+
+NMTUI(1)                                               General Commands Manual                                              NMTUI(1)
+
+NAME
+       nmtui - Text User Interface for controlling NetworkManager
+
+SYNOPSIS
+       nmtui-edit | nmtui edit  {name | id}
+
+       nmtui-connect | nmtui connect  {name | uuid | device | SSID}
+
+       nmtui-hostname | nmtui hostname
+
+DESCRIPTION
+       nmtui is a curses‐based TUI application for interacting with NetworkManager. When starting nmtui, the user is prompted to
+       choose the activity to perform unless it was specified as the first argument.
+
+       The supported activities are:
+
+       edit
+           Show a connection editor that supports adding, modifying, viewing and deleting connections. It provides similar
+           functionality as nm-connection-editor.
+
+       connect
+           Show a list of available connections, with the option to activate or deactivate them. It provides similar functionality
+           as nm-applet.
+
+       hostname
+           Set the system hostname.
+
+       Corresponding to above activities, nmtui also comes with binaries named nmtui-edit, nmtui-connect, and nmtui-hostname to skip
+       the selection of the activities.
+
+
+systemd-networkd
+------
+
+
+systemd-networkd.service
+
+NAME
+       systemd-networkd.service, systemd-networkd - Network manager
+
+SYNOPSIS
+       systemd-networkd.service
+
+       /lib/systemd/systemd-networkd
+
+DESCRIPTION
+       systemd-networkd is a system service that manages networks. It detects and configures network devices as they appear, as well
+       as creating virtual network devices.
+
+       To configure low-level link settings independently of networks, see systemd.link(5).
+
+       systemd-networkd will create network devices based on the configuration in systemd.netdev(5) files, respecting the [Match]
+       sections in those files.
+
+       systemd-networkd will manage network addresses and routes for any link for which it finds a .network file with an appropriate
+       [Match] section, see systemd.network(5). For those links, it will flush existing network addresses and routes when bringing
+       up the device. Any links not matched by one of the .network files will be ignored. It is also possible to explicitly tell
+       systemd-networkd to ignore a link by using Unmanaged=yes option, see systemd.network(5).
+
+       When systemd-networkd exits, it generally leaves existing network devices and configuration intact. This makes it possible to
+       transition from the initramfs and to restart the service without breaking connectivity. This also means that when
+       configuration is updated and systemd-networkd is restarted, netdev interfaces for which configuration was removed will not be
+       dropped, and may need to be cleaned up manually.
+
+       systemd-networkd may be introspected and controlled at runtime using networkctl(1).
+
+CONFIGURATION FILES
+       The configuration files are read from the files located in the system network directory /lib/systemd/network, the volatile
+       runtime network directory /run/systemd/network and the local administration network directory /etc/systemd/network.
+
+       Networks are configured in .network files, see systemd.network(5), and virtual network devices are configured in .netdev
+       files, see systemd.netdev(5).
+
+SEE ALSO
+       networkctl(1), systemd(1), systemd.link(5), systemd.network(5), systemd.netdev(5), systemd-networkd-wait-online.service(8),
+       systemd-networkd-generator.service(8)
+
+
+
+networkctl 
+----
+
+
+networkctl 
+
+       networkctl - Query the status of network links
+
+SYNOPSIS
+       networkctl [OPTIONS...] COMMAND [LINK...]
+
+DESCRIPTION
+       networkctl may be used to introspect the state of the network links as seen by systemd-networkd. Please refer to systemd-
+       networkd.service(8) for an introduction to the basic concepts, functionality, and configuration syntax.
+
+COMMANDS
+       The following commands are understood:
+
+       list [PATTERN...]
+           Show a list of existing links and their status. If one ore more PATTERNs are specified, only links matching one of them
+           are shown. If no further arguments are specified shows all links, otherwise just the specified links. Produces output
+           similar to:
+
+               IDX LINK         TYPE     OPERATIONAL SETUP
+                 1 lo           loopback carrier     unmanaged
+                 2 eth0         ether    routable    configured
+                 3 virbr0       ether    no-carrier  unmanaged
+                 4 virbr0-nic   ether    off         unmanaged
+
+               4 links listed.
+
+           The operational status is one of the following:
+
+           missing
+               the device is missing
+
+           off
+               the device is powered down
+
+           no-carrier
+               the device is powered up, but it does not yet have a carrier
+
+           dormant
+               the device has a carrier, but is not yet ready for normal traffic
+
+           degraded-carrier
+               for bond or bridge master, one of the bonding or bridge slave network interfaces is in off, no-carrier, or dormant
+               state
+
+           carrier
+               the link has a carrier, or for bond or bridge master, all bonding or bridge slave network interfaces are enslaved to
+               the master.
+
+           degraded
+               the link has carrier and addresses valid on the local link configured
+
+           enslaved
+               the link has carrier and is enslaved to bond or bridge master network interface
+
+           routable
+               the link has carrier and routable address configured
+
+           The setup status is one of the following:
+
+           pending
+               udev is still processing the link, we don't yet know if we will manage it
+
+           failed
+               networkd failed to manage the link
+
+           configuring
+               in the process of retrieving configuration or configuring the link
+
+           configured
+               link configured successfully
+
+           unmanaged
+               networkd is not handling the link
+
+           linger
+               the link is gone, but has not yet been dropped by networkd
+
+       status [PATTERN...]
+           Show information about the specified links: type, state, kernel module driver, hardware and IP address, configured DNS
+           servers, etc. If one ore more PATTERNs are specified, only links matching one of them are shown.
+
+           When no links are specified, an overall network status is shown. Also see the option --all.
+
+           Produces output similar to:
+
+               ●      State: routable
+                    Address: 10.193.76.5 on eth0
+                             192.168.122.1 on virbr0
+                             169.254.190.105 on eth0
+                             fe80::5054:aa:bbbb:cccc on eth0
+                    Gateway: 10.193.11.1 (CISCO SYSTEMS, INC.) on eth0
+                        DNS: 8.8.8.8
+                             8.8.4.4
+
+       lldp [PATTERN...]
+           Show discovered LLDP (Link Layer Discovery Protocol) neighbors. If one or more PATTERNs are specified only neighbors on
+           those interfaces are shown. Otherwise shows discovered neighbors on all interfaces. Note that for this feature to work,
+           LLDP= must be turned on for the specific interface, see systemd.network(5) for details.
+
+           Produces output similar to:
+
+               LINK             CHASSIS ID        SYSTEM NAME      CAPS        PORT ID           PORT DESCRIPTION
+               enp0s25          00:e0:4c:00:00:00 GS1900           ..b........ 2                 Port #2
+
+               Capability Flags:
+               o - Other; p - Repeater;  b - Bridge; w - WLAN Access Point; r - Router;
+               t - Telephone; d - DOCSIS cable device; a - Station; c - Customer VLAN;
+               s - Service VLAN, m - Two-port MAC Relay (TPMR)
+
+               1 neighbors listed.
+
+       label
+           Show numerical address labels that can be used for address selection. This is the same information that ip-addrlabel(8)
+           shows. See RFC 3484[1] for a discussion of address labels.
+
+           Produces output similar to:
+
+               Prefix/Prefixlen                          Label
+                       ::/0                                  1
+                   fc00::/7                                  5
+                   fec0::/10                                11
+                   2002::/16                                 2
+                   3ffe::/16                                12
+                2001:10::/28                                 7
+                   2001::/32                                 6
+               ::ffff:0.0.0.0/96                             4
+                       ::/96                                 3
+                      ::1/128                                0
+
+       delete
+           Deletes virtual netdevs. Takes interface name or index number.
+
+       renew
+           Renew dynamic configurations e.g. addresses received from DHCP server. Takes interface name or index number.
+
+       reconfigure
+           Reconfigure network interfaces. Takes interface name or index number.
+
+       reload
+           Reload .netdev and .network files. If a new .netdev file is found, then the corresponding netdev is created. Note that
+           even if an existing .netdev is modified or removed, systemd-networkd does not update or remove the netdev. If a new,
+           modified or removed .network file is found, then all interfaces which match the file are reconfigured.
+
+OPTIONS
+       The following options are understood:
+
+       -a --all
+           Show all links with status.
+
+       -s --stats
+           Show link statistics with status.
+
+       -l, --full
+           Do not ellipsize the output.
+
+       -n, --lines=
+           When used with status, controls the number of journal lines to show, counting from the most recent ones. Takes a positive
+           integer argument. Defaults to 10.
+
+       -h, --help
+           Print a short help text and exit.
+
+       --version
+           Print a short version string and exit.
+
+       --no-legend
+           Do not print the legend, i.e. column headers and the footer with hints.
+
+       --no-pager
+           Do not pipe output into a pager.
+
+EXIT STATUS
+       On success, 0 is returned, a non-zero failure code otherwise.
+
+SEE ALSO
+       systemd-networkd.service(8), systemd.network(5), systemd.netdev(5), ip(8)
+
+NOTES
+        1. RFC 3484
+           https://tools.ietf.org/html/rfc3484
+
+systemd 245                                                                                                            NETWORKCTL(1)
+
+
+
+networkd-dispather
+----
+
+
+NETWORKD-DISPATCHER(8)                                                                                        NETWORKD-DISPATCHER(8)
+
+NAME
+       networkd-dispatcher - Dispatcher service for systemd-networkd connection status changes
+用于系统-网络连接状态更改的调度程序服务
+
+SYNOPSIS
+       networkd-dispatcher [-h] [-S SCRIPT_DIR] [-T] [-v] [-q]
+
+DESCRIPTION
+       Dispatcher daemon for systemd-networkd connection status changes. This daemon is similar to NetworkManager-dispatcher, but is
+       much more limited in the types of events it supports due to the limited nature of systemd-networkd(8).
+	   
+	   用于系统-网络连接状态更改的调度程序守护进程。这个守护进程类似于NetworkManager-dispatcher。
+
+       Desired actions (scripts) are placed into directories that reflect systemd-networkd operational states under SCRIPT_DIR and
+       are executed when the daemon receives the relevant event from systemd-networkd.
+
+       The daemon listens for signals from systemd-networkd over dbus, so it should be very light on resources (e.g. no polling). It
+       is meant to be run as a system-wide daemon (as root). This allows it to be used for tasks such as starting a VPN after a
+       connection is established.
+
+OPTIONS
+       -h, --help
+           Print command-line syntax and program options to stdout.
+
+       -S, --script-dir=SCRIPT_DIR
+           Location under which to look for scripts. Like the PATH environment variable, this may contain multiple directories
+           separated by : and in case multiple directories have scripts with the same name, the earliest directory wins. Defaults to
+           /etc/networkd-dispatcher:/usr/lib/networkd-dispatcher.
+
+       -T, --run-startup-triggers
+           Generate events reflecting preexisting state and behavior on startup. This can be used to ensure that triggers are
+           belatedly run even if networkd-dispatcher is invoked after systemd-networkd has already started an interface.
+
+       -v, --verbose
+           Increase verbosity by one level. The default level is WARNING. Each use of -v will increment the log level (towards INFO
+           or DEBUG), and each use of -q will decrement it (towards ERROR or CRITICAL).
+
+       -q, --quiet
+           Decrease verbosity by one level.
+
+CONFIGURATION FILES
+       The systemd service reads /etc/default/networkd-dispatcher as an environment file for additional daemon arguments.
+
+       The scripts to be run on network changes are in subdirectories routable.d/, dormant.d/, no-carrier.d/, off.d/, carrier.d/,
+       degraded.d/ inside SCRIPT_DIR. The default value for SCRIPT_DIR is /etc/networkd-dispatcher:/usr/lib/networkd-dispatcher.
+
+       For information about the network operational states exposed by systemd, see networkctl(1).
+
+RESOURCES
+       GitHub: https://github.com/craftyguy/networkd-dispatcher
+
+SEE ALSO
+       systemd-networkd(8), networkctl(1)
+
+                                                             08/19/2019                                       NETWORKD-DISPATCHER(8)
+
+:)

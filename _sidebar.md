@@ -16,18 +16,9 @@
 - **NetWorkManager**
 
   - [nmcli](nmcli)
-  - [ManPage-nmcli](Man/ManPage-nmcli)
   - [nmtui](nmtui)
-  - [ManPage-nmtui](Man/ManPage-nmtui)
-  
-- **Systemd-Networkd**
-
   - [Networkd1](systemd-network)
-  - [Networkd2](systemd-network2)
-  - [ManPage-networkd](Man/ManPage-systemd-network)
-  - [ManPage-networkctl](Man/ManPage-networkctl)
-  - [ManPage-networkd-dispatcher](Man/ManPage-networkd-dispatcher)  
-  
+  - [ManPage](Man)
   
 - **iptables**
 
