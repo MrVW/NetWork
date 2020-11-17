@@ -1,5 +1,9 @@
 ### 网络上的文章
 
+[学习 Linux 101：永久网络配置](https://developer.ibm.com/zh/tutorials/l-lpic1-109-2/)
+
+[学习 Linux 101：基本网络故障诊断](https://developer.ibm.com/zh/tutorials/l-lpic1-109-3/)
+
 [ping不通怎么办](http://www.360doc.com/content/20/0404/17/682382_903827607.shtml)
 
 [当能电脑能够ping通同一个网段的ip，却ping不通网关的解决方法](https://blog.csdn.net/lmz2423/article/details/8838445)
