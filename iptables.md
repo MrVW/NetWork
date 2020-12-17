@@ -76,3 +76,7 @@ ufw相关的文件和文件夹有：
 ### iptables
 
 
+![](tables_of_iptables.gif)
+
+
+
