@@ -81,10 +81,9 @@ ufw相关的文件和文件夹有：
 
 ||table|command|chain|Parameter & Xmatch| target |
 |----|----|----|----|----|----|
-|iptables||-t filter <br> nat | -A <br> -D <br> -L <br> -F <br> -P <br> -I <br> -R <br>-n | INPUT <br> FORWARD <br> OUTPUT <br> PREROUTING <br> POSTROUTING | -p tcp <br> -s <br> -d <br> --sport <br> --dport <br> --dports <br> -m tcp <br>   state <br> multiport | -j ACCEPT <br> DROP <br> REJECT <br> DNAT <br> SNAT |
+|iptables||-t filter <br> nat | -A <br> -D <br> -L <br> -F <br> -P <br> -I <br> -R <br>-n | INPUT <br> FORWARD <br> OUTPUT <br> PREROUTING <br> POSTROUTING | -p tcp <br> -s <br> -d <br> --sport <br> --dport <br> --dports <br> -m tcp <br>    <p text-indent: 2em;> state</p> <br> multiport | -j ACCEPT <br> DROP <br> REJECT <br> DNAT <br> SNAT |
 <br> <br> 
 
 <br> <br> 
-		|
 
 
