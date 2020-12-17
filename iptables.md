@@ -7,33 +7,33 @@ biao@WB:~$ ufw --help
 
 Usage: ufw COMMAND
 
-Commands:
- enable                          enables the firewall
- disable                         disables the firewall
- default ARG                     set default policy
- logging LEVEL                   set logging to LEVEL
- allow ARGS                      add allow rule
- deny ARGS                       add deny rule
- reject ARGS                     add reject rule
- limit ARGS                      add limit rule
- delete RULE|NUM                 delete RULE
- insert NUM RULE                 insert RULE at NUM
- route RULE                      add route RULE
- route delete RULE|NUM           delete route RULE
- route insert NUM RULE           insert route RULE at NUM
- reload                          reload firewall
- reset                           reset firewall
- status                          show firewall status
- status numbered                 show firewall status as numbered list of RULES
- status verbose                  show verbose firewall status
- show ARG                        show firewall report
- version                         display version information
+	Commands:
+	 enable                          enables the firewall
+	 disable                         disables the firewall
+	 default ARG                     set default policy
+	 logging LEVEL                   set logging to LEVEL
+	 allow ARGS                      add allow rule
+	 deny ARGS                       add deny rule
+	 reject ARGS                     add reject rule
+	 limit ARGS                      add limit rule
+	 delete RULE|NUM                 delete RULE
+	 insert NUM RULE                 insert RULE at NUM
+	 route RULE                      add route RULE
+	 route delete RULE|NUM           delete route RULE
+	 route insert NUM RULE           insert route RULE at NUM
+	 reload                          reload firewall
+	 reset                           reset firewall
+	 status                          show firewall status
+	 status numbered                 show firewall status as numbered list of RULES
+	 status verbose                  show verbose firewall status
+	 show ARG                        show firewall report
+	 version                         display version information
 
-Application profile commands:
- app list                        list application profiles
- app info PROFILE                show information on PROFILE
- app update PROFILE              update PROFILE
- app default ARG                 set default application policy
+	Application profile commands:
+	 app list                        list application profiles
+	 app info PROFILE                show information on PROFILE
+	 app update PROFILE              update PROFILE
+	 app default ARG                 set default application policy
 
 
 	ufw enable/disable：打开/关闭ufw
@@ -81,7 +81,7 @@ ufw相关的文件和文件夹有：
 
 ||table|command|chain|Parameter & Xmatch| target |
 |----|----|----|----|----|----|
-|iptables||-t filter <br> nat | -A <br> -D <br> -L <br> -F <br> -P <br> -I <br> -R <br>-n | INPUT <br> FORWARD <br> OUTPUT <br> PREROUTING <br> POSTROUTING | -p tcp <br> -s <br> -d <br> --sport <br> --dport <br> --dports <br> -m tcp <br>    <p text-indent: 2em;> state</p> <br> multiport | -j ACCEPT <br> DROP <br> REJECT <br> DNAT <br> SNAT |
+|iptables||-t filter <br> nat | -A <br> -D <br> -L <br> -F <br> -P <br> -I <br> -R <br>-n | INPUT <br> FORWARD <br> OUTPUT <br> PREROUTING <br> POSTROUTING | -p tcp <br> -s <br> -d <br> --sport <br> --dport <br> --dports <br> -m tcp <br>        &nbsp state <br>    multiport | -j ACCEPT <br> DROP <br> REJECT <br> DNAT <br> SNAT |
 <br> <br> 
 
 <br> <br> 
