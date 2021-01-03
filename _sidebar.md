@@ -40,8 +40,8 @@
 
 - **网络编程**
 
-  - [TCPIP协议的编程基础](netprogramming/Overview.md)
-  - [tcp通信](netprogramming/TCP.md)
-  - [udp通信](netprogramming/UDP.md)
-  - [Socket](netprogramming/Socket.md)
+  - [TCPIP协议的编程基础](NetWorkProgram/Overview.md)
+  - [tcp通信](NetWorkProgram/TCP.md)
+  - [udp通信](NetWorkProgram/UDP.md)
+  - [Socket](NetWorkProgram/Socket.md)
 
