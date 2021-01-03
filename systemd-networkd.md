@@ -118,12 +118,24 @@ DHCP动态分配网络适配器
 <td><code>false</code>
 </td></tr></tbody></table>
 
-More
-----
+
+
 
 [systemd.netdev 中文手册](http://www.jinbuguo.com/systemd/systemd.netdev.html)
 
-[]()
 
+Ubuntu将NetworkManager切换为systemd-network
+----
+
+[Ubuntu将NetworkManager切换为systemd-network](http://www.10qianwan.com/articledetail/124292.html)
+
+	$ sudo systemctl disable networkmanager
+	$ sudo systemctl start systemd-networkd
+
+	$ sudo systemctl enable systemd-resolved
+	$ sudo systemctl start systemd-resolved
+
+	sudo rm /etc/resolv.conf
+	sudod ln -s /run/systemd/resolve/resolv.conf  /etc/resolv.conf
 
 :)
