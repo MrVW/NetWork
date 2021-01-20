@@ -9,6 +9,7 @@
   - [ip](NetWorkBaseTerms/ip.md)
   - [路由和网关](NetWorkBaseTerms/gateway.md)
   - [反向路由](NetWorkBaseTerms/rp_filter.md)
+  - [DNS](NetWorkBaseTerms/DNS.md)
   - [MTU](IpSet/MTU.md)
 
 - **CMDsAndTools**
